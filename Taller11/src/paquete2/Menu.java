@@ -4,64 +4,54 @@
  */
 package paquete2;
 
-
 public abstract class Menu {
-    
+
     private String nombrePlato;
-    private double valorMenu;
-    private double valorInicial;
-    
-     public Menu(String nombre, double valorM, double valorI){
-        
+    double valorMenu;
+    double valorInicial;
+
+    public Menu(String nombre, double valorI) {
+
         nombrePlato = nombre;
-        valorMenu = valorM;
-        valorInicial = valorI;      
+        valorInicial = valorI;
     }
-    
-     //metodos establecer
-     public void establecerNombrePlato(String nombre){
-         nombrePlato = nombre;
-     
-     }
-     public void establecerValorMenu(double valorM){
-         valorMenu = valorM;
-     
-     }
-     
-     public void establecerValorInicial(double valorI){
-         valorInicial = valorI;
-     
-     }
-     
-     //metodos obtener
-     public String obtenerNombrePlato(){
-         return nombrePlato;
-     
-     }
-     
-     public double obtenerValorMenu(){
-         return valorMenu;
-     
-     }
-     
-     public double obtenerValorInicial(){
-         return valorInicial;
-     
-     }
- @Override
+
+    //metodos establecer
+    public void establecerNombrePlato(String nombre) {
+        nombrePlato = nombre;
+
+    }
+
+    public abstract void establecerValorMenu();
+
+    public void establecerValorInicial(double valorI) {
+        valorInicial = valorI;
+
+    }
+
+    //metodos obtener
+    public String obtenerNombrePlato() {
+        return nombrePlato;
+
+    }
+
+    public double obtenerValorInicial() {
+        return valorInicial;
+
+    }
+
+    public double obtenerValorMenu() {
+        return valorMenu;
+    }
+
+    @Override
     public String toString() {
-        String cadena = String.format("Restaurante\n"
-                + "%s\n"
-                + "Nombre Plato: %.2f\n"
-                + "Valor Menu: %.2f\n"
-                + "Valor Inicial: %.2f\n",
+        String cadena = String.format("\tNombre Plato: %s\n"
+                + "\tValor Inicial: %.2f\n",
                 obtenerNombrePlato(),
-                obtenerValorMenu(),
                 obtenerValorInicial());
 
         return cadena;
-    }   
-     
-     
-    
+    }
+
 }
